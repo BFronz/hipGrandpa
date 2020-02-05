@@ -1,0 +1,72 @@
+<!--need to add content for when they first arrive at the page
+    on click of an API, hide the content and bring up the api clicked
+    need to create a grid system to format the page
+    need to make a toggle for navbar when page is shrinking-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hip Grandpa</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+  </head>
+
+  <body>
+    <nav>
+        <div class="nav-wrapper" width="500px" height="200px" style="padding: 15px;">
+           <img class = "circle" width=70px src="assets/images/hip-grandpa-dresses-better-than-most-people-half-his-age-1.jpg" alt="" ></img>
+          <a class="brand-logo" >Hip Grandpa</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li id="1" data-name="nytimes" class="nav-link"><a href="#">New York Times Most Visited</a></li>
+            <li id="2" data-name="holiday" class="nav-link"><a href="#">Holidays</a></li>
+            <li id="3" data-name="music" class="nav-link"><a href="#">Music</a></li>
+            <li id="4" data-name="wine" class="nav-link"><a href="#">Hip Wines</a></li>
+            <li id="5" data-name="jokes" class="nav-link"><a href="#">Jokes</a></li>
+          </ul>
+        </div>
+      </nav>
+
+<div class="container">
+  <!--start screen for first time users coming to the site-->
+  <div id="start-screen">
+    <div class = "row"></div>
+    <p>hi</p>
+  </div> <!--end start screen-->
+
+  <!--divs for where APIs will appear-->
+  <div id="nyt-results"></div>  
+  <div id="holiday-results"></div>  
+  <div id="music-results"><div> 
+  <div id="wine-results"></div>
+  <div id="grandpa-jokes"></div>
+
+</div><!--end container-->   
+
+<!--start javascript-->
+<script>
+ $(document).ready(function() {
+
+var startScreen = document.getElementById("start-screen");
+
+// when user clicks link, hide start screen, show API trends
+$("a").click(function() {
+  startScreen.setAttribute("class", "hide");
+});
+
+});
+</script>
+
+</body>
+</html>
+
+
