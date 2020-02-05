@@ -236,6 +236,10 @@ font-size: 28px;
                 </li>
 
                 <li class="nav-item">
+                  <div id="4"  data-name="Joke" class="nav-link" >Joke</div>  
+                </li>
+
+                <li class="nav-item">
                   <div id="5"  data-name="clear" class="nav-clear" >&nbsp; &nbsp; &nbsp;Clear All</div>  
                 </li>
 
@@ -314,7 +318,8 @@ font-size: 28px;
                 <div id="Music-results">
                </div> 
 
-
+               <div id="Joke-results">
+              </div> 
 
 
           </div>
@@ -532,19 +537,47 @@ var newRow3 = $("<div class='smalltype smalltype-pad'>" + artist + "</div>");
 newRow2.append(newRow3); 
 }     
 
-
-
 });
 
 }
 
 
 
+if (apis.indexOf("Joke") >= 0) {  
+
+var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://jokeapi.p.rapidapi.com/category/miscellaneous?format=json",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "jokeapi.p.rapidapi.com",
+		"x-rapidapi-key": "001df8cadcmsha73da3732d7cba9p10579bjsn40db637f4980"
+	}
+}
+
+$.ajax(settings).done(function (resp) {
+	console.log(resp);
+
+var newRow = $("<h4>Hip Joke of the day...</h4>");
+$("#Joke-results").append(newRow);  
+
+
+var setUp    = resp.setup;
+var delivery = resp.delivery;
+
+var newRow2 = $("<div class='smalltype'>"+ setUp +"</div>");
+newRow.append(newRow2); 
+
+var newRow3 = $("<div class='smalltype'>"+ delivery +"</div>");
+newRow2.append(newRow3); 
+
+
+});
 
 
 
-
-
+}
 
 
 
