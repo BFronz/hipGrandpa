@@ -16,20 +16,26 @@
     <!-- <input id="excludeIngredients" placeholder="No sugar added">
     <input id="intoleranceIngredients" placeholder="Gluten-free"> -->
     <button id="submitSearchQ">Search</button>
+
+    <input id="wordSearchQ" placeholder="i.e. tunes">
+    <button id="submitWordSearchQ">Search</button>
     <div id="example"></div>
 
 
 
 
 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
     <script>
         //variables
         var searchQ = "";
         var excludeIngredients = "";
         var intolerance = "";
         var typeOfWine = "";
-
+        var wordQuery = "";
 
         //event listeners
         $("#submitSearchQ").on("click", makeCallSpoon)
@@ -42,7 +48,7 @@
 
             var spoonKey = "697707a6d9bd436a84a81ca2ca3fd98a";
             // var excludeIngredient = "sugar"; //this could retrieve input from input field
-            // var intolerances = "gluten"; // same with this one 
+            // var intolerances = "gluten"; // same with this one
 
 
             // queryURL = `https://api.spoonacular.com/food/products/search?query=${searchQ}&excludeIngredient="${excludeIngredient}"&intolerances="${intolerances}"&apiKey=${spoonKey}`;
@@ -68,38 +74,71 @@
                     // recommendedWines[i].link
                 }
             });
+        }
 
 
 
+        //URBAN DICTIONARY
+        $("#submitWordSearchQ").on("click", urbanDictionary)
+        function urbanDictionary() {
+            wordQuery = $("#wordSearchQ").val();
 
+            var newFrame = $("<iframe>");
+            newFrame.attr("src", `https://www.urbandictionary.com/define.php?term=${wordQuery}&defid=1401399`)
+            newFrame.attr("width", "400px;")
+            newFrame.attr("height", "560px;")
 
+            $("#example").append(newFrame)
 
-
-
-
-
-
-            // zomatoKey = "418aaf14c4ed33bb49f504291dd5a208";
-            // queryURL = `https://developers.zomato.com/api/v2.1/search?q=New York&apiKey=${zomatoKey}`;
-            //queryURL = https://developers.zomato.com/api/v2.1/search?q=pizza&start=0&count=10&apiKey=2fdbe116489f05fb9d2ffac7f1f10509
-            // queryURL = `https://developers.zomato.com/api/v2.1/search?q=${searchQ}&location=newyork&start=0&count=5&apikey=${zomatoKey}`;
-            // queryURL = `https://developers.zomato.com/api/v2.1/search?entity_id=280&entity_type=city&collection_id=1&start=0&count=5&apiKey=${zomatoKey}`
-            $.ajax({
-                url: queryURL,
-                method: "GET"
-            }).then(function (response) {
-                console.log(response);
-                var restaurantArray = response.restaurants
-                for (i = 0; i < restaurantArray.length; i++) {
-                    var newDiv = $("<div>");
-                    var restaurant = response.restaurants[i].restaurant.name
-                    newDiv.text(restaurant);
-
-                    $("#example").append(newDiv);
-                }
-            });
+            // queryURL2 = ;
+            // document.location.href = queryURL2;
 
         }
+        // //Yelp api
+        // function yelpCall() {
+        //     var yelpKey = "fLNZboMELP5IDlx0Ahs3zSWiR-hifUeCFLFw4sWu9mfYxUIm3cmix49EBod3O8Kgom7vnRgmzydQXhnhe0wFlfmPARsQo7A3mAJ3z24YgcKia9T6zan73_cklvY6XnYx"
+        //     // var queryURL2 = `https://api.yelp.com/v3/autocomplete?text=del&latitude=37.786882&longitude=-122.399972&apiKey=${yelpKey}`
+        //     var queryURL2 = `https://api.yelp.com/v3/businesses/search?term=delis&latitude=37.786882&longitude=-122.399972&apiKey=${yelpKey}`
+
+
+
+        //     $.ajax({
+        //         url: queryURL2,
+        //         method: "GET"
+        //     }).then(function (response2) {
+        //         console.log(response2);
+
+
+        //     });
+
+        // }
+
+        // yelpCall();
+
+
+
+
+        // zomatoKey = "418aaf14c4ed33bb49f504291dd5a208";
+        // queryURL = `https://developers.zomato.com/api/v2.1/search?q=New York&apiKey=${zomatoKey}`;
+        //queryURL = https://developers.zomato.com/api/v2.1/search?q=pizza&start=0&count=10&apiKey=2fdbe116489f05fb9d2ffac7f1f10509
+        // queryURL = `https://developers.zomato.com/api/v2.1/search?q=${searchQ}&location=newyork&start=0&count=5&apikey=${zomatoKey}`;
+        // queryURL = `https://developers.zomato.com/api/v2.1/search?entity_id=280&entity_type=city&collection_id=1&start=0&count=5&apiKey=${zomatoKey}`
+        // $.ajax({
+        //     url: queryURL,
+        //     method: "GET"
+        // }).then(function (response) {
+        //     console.log(response);
+        //     var restaurantArray = response.restaurants
+        //     for (i = 0; i < restaurantArray.length; i++) {
+        //         var newDiv = $("<div>");
+        //         var restaurant = response.restaurants[i].restaurant.name
+        //         newDiv.text(restaurant);
+
+        //         $("#example").append(newDiv);
+        //     }
+        // });
+
+
     </script>
 </body>
 
