@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="header">Wine Recommendations by Spoonacular</div>
+
+    <input id="searchQ" placeholder="i.e. merlot">
+    <!-- <input id="excludeIngredients" placeholder="No sugar added">
+    <input id="intoleranceIngredients" placeholder="Gluten-free"> -->
+    <button id="submitSearchQ">Search</button>
+    <div id="example"></div>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        //variables
+        var searchQ = "";
+        var excludeIngredients = "";
+        var intolerance = "";
+        var typeOfWine = "";
+
+
+        //event listeners
+        $("#submitSearchQ").on("click", makeCallSpoon)
+
+        //functions
+
+
+        function makeCallSpoon() {
+            typeOfWine = $("#searchQ").val();
+
+            var spoonKey = "697707a6d9bd436a84a81ca2ca3fd98a";
+            // var excludeIngredient = "sugar"; //this could retrieve input from input field
+            // var intolerances = "gluten"; // same with this one 
+
+
+            // queryURL = `https://api.spoonacular.com/food/products/search?query=${searchQ}&excludeIngredient="${excludeIngredient}"&intolerances="${intolerances}"&apiKey=${spoonKey}`;
+            // queryURL = `https://api.spoonacular.com/food/products/search?query=${searchQ}&maxCarbs&apiKey=${spoonKey}`;
+            queryURL = `https://api.spoonacular.com/food/wine/recommendation?wine=${typeOfWine}&number=3&apiKey=${spoonKey}`;
+
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function (response) {
+                console.log(response);
+                var arrayWine = response.recommendedWines
+                for (i = 0; i < arrayWine.length; i++) {
+                    var newWine = $("<a>");
+                    newWine.attr("href", arrayWine[i].link)
+                    $("#example").append(newWine.text(arrayWine[i].title));
+                    var newWinePic = $("<img>");
+                    newWinePic.attr("src", arrayWine[i].imageUrl);
+                    $("#example").append(newWinePic)
+
+                    //for more info on each wine use recommendedWines[i].description
+                    // recommendedWines[i].imageUrl
+                    // recommendedWines[i].link
+                }
+            });
+
+
+
+
+
+
+
+
+
+
+
+            // zomatoKey = "418aaf14c4ed33bb49f504291dd5a208";
+            // queryURL = `https://developers.zomato.com/api/v2.1/search?q=New York&apiKey=${zomatoKey}`;
+            //queryURL = https://developers.zomato.com/api/v2.1/search?q=pizza&start=0&count=10&apiKey=2fdbe116489f05fb9d2ffac7f1f10509
+            // queryURL = `https://developers.zomato.com/api/v2.1/search?q=${searchQ}&location=newyork&start=0&count=5&apikey=${zomatoKey}`;
+            // queryURL = `https://developers.zomato.com/api/v2.1/search?entity_id=280&entity_type=city&collection_id=1&start=0&count=5&apiKey=${zomatoKey}`
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function (response) {
+                console.log(response);
+                var restaurantArray = response.restaurants
+                for (i = 0; i < restaurantArray.length; i++) {
+                    var newDiv = $("<div>");
+                    var restaurant = response.restaurants[i].restaurant.name
+                    newDiv.text(restaurant);
+
+                    $("#example").append(newDiv);
+                }
+            });
+
+        }
+    </script>
+</body>
+
+
+</html>
