@@ -287,6 +287,7 @@ font-size: 28px;
           <div  class="col-md-9  mr-sm-auto  border rounded-sm p-2 main-style">      
             <!-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">  -->
               <h5 class="h5">Click on a trending API on the left or add a link name and url.</h5> 
+          
               <div id="NYT-results">
                </div>  
 
@@ -325,6 +326,7 @@ if (apiArr !== null) {
     apis = apiArr;
 }
 
+//alert(apis);
 
 
 // adding a api
@@ -332,12 +334,12 @@ $(document).on("click", ".nav-link", function(){
     event.preventDefault();
 
     var apiSelected = $(this).attr("data-name");
-    alert(apiSelected);
+    //alert(apiSelected);
       
     if (apis.indexOf(apiSelected) === -1) {    
         apis.unshift(apiSelected);
     }
-    alert(apis);
+    //alert(apis);
 
     
     localStorage.setItem("MyApi", JSON.stringify(apis));
@@ -350,9 +352,14 @@ $(document).on("click", ".nav-link", function(){
 
 // clear all
 $(document).on("click", ".nav-clear", function(){
-    // event.preventDefault();
-    var apiSelected = $(this).attr("data-name");
-    $("#NY-Times").empty();
+    event.preventDefault();
+    var x = $(this).attr("data-name");
+     alert(x);
+    $("#NYT-results").empty();
+    $("Holiday-results").empty();
+    $("NASA-results").empty();
+    $(".smalltype").text ="";
+    
     localStorage.removeItem("MyApi");
     location.reload();
 });
@@ -455,12 +462,16 @@ $.ajax(settings).done(function (resp) {
   var newRow = $("<h4>NASA Image of the Day...</h4>");
   $("#NASA-results").append(newRow);  
 
-//var img = resp.contexWrites.to.copyright;
+var img = resp.contextWrites.to.hdurl;
+var title = resp.contextWrites.to.title;
 
-//console.log(resp.contexWrites.to.url);
+console.log(img);
 
-  //var newRow2 = $("<div class='smalltype smalltype-pad'><img scr='"+img+"'></div>");
- // newRow.append(newRow2); 
+  var newRow2 = $("<div class='smalltype' ><img src='"+img+"' width='200px' height='200px'></div>");
+  newRow.append(newRow2); 
+
+  var newRow3 = $("<div class='smalltype smalltype-pad'>" + title + "</div>");
+  newRow2.append(newRow3); 
 
 
 });
