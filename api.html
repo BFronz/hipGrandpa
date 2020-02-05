@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
+    <title>Hip Grandpa Online</title>
+  
+<style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    
+      body {
+  font-size: .875rem;
+}
+
+.sidebar-items {
+  margin-left: 10px;;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 79px 0 0; /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link {
+  margin-right: 4px;
+  color: #000000;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+/*
+ * Content
+ */
+
+[role="main"] {
+  padding-top: 133px; /* Space for fixed navbar */
+}
+
+@media (min-width: 768px) {
+  [role="main"] {
+    padding-top: 48px; /* Space for fixed navbar */
+  }
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, .25);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .form-control {
+  padding: .75rem 1rem;
+  border-width: 0;
+  border-radius: 0;
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, .1);
+  border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+.font-large{
+  font-size: 36px;
+}
+.main-style {
+ margin-top:100px;
+  margin-left: 300px; 
+}
+.smalltype{
+  font-size: 14px;
+  
+}
+.smalltype-pad{
+   padding-left: 20px;
+   margin-bottom: 10px;
+}
+.red{
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
+.btn {
+  padding: 3px;
+  font-size: 14px;
+  margin-top: 10px;
+
+}
+.l-font{
+font-size: 28px;
+
+}
+
+
+
+
+
+
+
+</style>
+
+</head>
+
+
+  <body>
+
+      <!--nav-->
+ 
+
+
+      <nav class="navbar navbar-dark fixed-top bg-primary flex-md-nowrap p-0 shadow">
+        <div class="navbar-brand col-sm-3 col-md-2 mr-0 font-medium l-font">
+          Hip Grandpa 
+        </div>
+        
+        <ul class="navbar-nav px-3">
+          <li class="nav-item text-nowrap">
+            <a class="nav-link" href="#">maybe something here?</a>
+          </li>
+        </ul>
+      </nav>
+
+    
+      <div class="container-fluid">
+
+
+
+
+        <div class="row"> 
+          <nav class="col-md-2 d-none d-md-block bg-light sidebar red">
+            
+      
+            <div class="sidebar-sticky">
+
+              <ul class="nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">
+                    Trending APIs <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">         
+                    <div id="1"  data-name="NYTimes" class="nav-link" >NY Times Most Visited </div>        
+                </li>
+                <li class="nav-item">
+                  <div id="2"  data-name="Holiday" class="nav-link" >Holidays </div>  
+                </li>
+                <li class="nav-item">
+                  <div id="3"  data-name="NASA" class="nav-link" >NASA  Daily Image </div>  
+                </li>
+                <li class="nav-item">
+                  <div id="4"  data-name="Bitcoin" class="nav-link" >Bitcoin Prices</div>  
+                </li>
+              </ul>
+      
+  
+              <ul class="nav flex-column mb-2">
+                <div class="nav-link active">
+                  Add Custom Links 
+                </div>
+                </li>
+                <li class="nav-item">
+                  <div class="nav-link">
+                  <form id="link-form">
+                    <label for="link-name-input">Link Name</label>
+                    <input type="text" id="name-input" placeholder="NY Post">
+                    <br>
+                    <label for="link-name-input">URL</label>
+                    <br>
+
+                    
+                    <input type="text" id="name-input" placeholder="https://nypost.com"><br>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                  
+
+                </form>
+                  <div>  
+                </li>
+              </ul>
+
+              <ul class="nav flex-column mb-2">
+                <div class="nav-link active">
+                  Your Custom Links: 
+                </div>
+                </li>
+
+              <li class="nav-item">                
+                  <div class="nav-link";>
+                    <i>Links will appear here...</i>            
+                  </div>
+                </li>
+                <li class="nav-item">                
+                  <div class="nav-link";>
+                    <div id="clear"  data-name="clear" class="nav-clear" >Clear All</div>              
+                  </div>
+                </li>
+
+                
+
+              </ul>
+
+            </div> <!--stick div-->
+
+          </nav> <!--navs-->
+         
+          <div  class="col-md-9  mr-sm-auto  border rounded-sm p-2 main-style">      
+            <!-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">  -->
+              <h5 class="h5">Click on a trending API on the left or add a link name and url.</h5> 
+              <div id="NYT-results">
+               </div>  
+
+               <div id="Holiday-results">
+              </div>  
+
+
+              <div id="NASA-results">
+              </div>  
+
+
+
+
+
+          </div>
+
+
+
+       </div> <!--row div-->
+    </div> <!--container div-->
+  
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    
+<script>
+
+var apis = [];
+
+
+// get from local storage add to our array if data
+var  apiArr = JSON.parse(localStorage.getItem("MyApi"));
+if (apiArr !== null) {
+    apis = apiArr;
+}
+
+
+
+// adding a api
+$(document).on("click", ".nav-link", function(){
+    event.preventDefault();
+
+    var apiSelected = $(this).attr("data-name");
+    alert(apiSelected);
+      
+    if (apis.indexOf(apiSelected) === -1) {    
+        apis.unshift(apiSelected);
+    }
+    alert(apis);
+
+    
+    localStorage.setItem("MyApi", JSON.stringify(apis));
+     
+    // $("#NYT-results").empty();
+
+    location.reload();
+});
+
+
+// clear all
+$(document).on("click", ".nav-clear", function(){
+    // event.preventDefault();
+    var apiSelected = $(this).attr("data-name");
+    $("#NY-Times").empty();
+    localStorage.removeItem("MyApi");
+    location.reload();
+});
+
+
+
+if (apis.indexOf("NYTimes") >= 0 ) {    
+       
+    $("h5").hide();
+
+      var URL = "https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=4qNVqjAdi03nzHw7azhmHTk15fzEQEo7";
+      $.ajax({
+        url: URL,
+        method: "GET"
+        }).then(function(resp){
+        console.log(resp)
+
+         var limit = 5;    
+
+         var newRow = $("<h4>NY Times Most Visited Articles...</h4>");
+          $("#NYT-results").append(newRow);    
+      
+        for(var i=0; i < limit; i++){
+
+          var title  = resp.results[i].title;
+          var byline = resp.results[i].byline;
+          var url    = resp.results[i].url;
+
+          // alert(title + " " + byline + " " + url);
+
+          var newRow2 = $("<div class='smalltype'>&#8226; " + title + "</div>");
+          newRow.append(newRow2); 
+
+          var newRow3 = $("<div class='smalltype smalltype-pad'>" + byline + " &nbsp; <a href='"+url+"' target ='_blank'>Link</a></div>");
+          newRow2.append(newRow3); 
+        
+      
+        }     
+      });
+}
+
+
+
+if (apis.indexOf("Holiday") >= 0) {  
+
+var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://public-holiday.p.rapidapi.com/2020/US",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "public-holiday.p.rapidapi.com",
+		"x-rapidapi-key": "001df8cadcmsha73da3732d7cba9p10579bjsn40db637f4980"
+	}
+}
+$.ajax(settings).done(function (resp) {
+
+	console.log(resp);
+
+  var newRow = $("<h4>Important Holidays...</h4>");
+  $("#Holiday-results").append(newRow);    
+      
+   
+
+  for(var i=0; i < 10; i++){
+
+  var dt  = resp[i].date;
+  var name = resp[i].localName;
+  var newRow2 = $("<div class='smalltype'>&#8226; " + dt + "</div>");
+  newRow.append(newRow2); 
+
+  var newRow3 = $("<div class='smalltype smalltype-pad'>" + name + "</div>");
+  newRow2.append(newRow3); 
+}     
+
+});
+
+}
+
+
+
+if (apis.indexOf("NASA") >= 0) {  
+
+var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://nasaapidimasv1.p.rapidapi.com/getPictureOfTheDay",
+	"method": "POST",
+	"headers": {
+		"x-rapidapi-host": "NasaAPIdimasV1.p.rapidapi.com",
+		"x-rapidapi-key": "001df8cadcmsha73da3732d7cba9p10579bjsn40db637f4980",
+		"content-type": "application/x-www-form-urlencoded"
+	},
+	"data": {}
+}
+
+$.ajax(settings).done(function (resp) {
+	console.log(resp);
+
+  var newRow = $("<h4>NASA Image of the Day...</h4>");
+  $("#NASA-results").append(newRow);  
+
+//var img = resp.contexWrites.to.copyright;
+
+//console.log(resp.contexWrites.to.url);
+
+  //var newRow2 = $("<div class='smalltype smalltype-pad'><img scr='"+img+"'></div>");
+ // newRow.append(newRow2); 
+
+
+});
+
+}
+
+
+</script>
+    
+</body>
+</html>
