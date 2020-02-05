@@ -75,22 +75,22 @@
   }
 }
 
-.sidebar .nav-link {
+.sidebar .nav-link .nav-clear {
   font-weight: 500;
   color: #333;
 }
 
-.sidebar .nav-link {
+.sidebar .nav-link .nav-clear {
   margin-right: 4px;
   color: #000000;
 }
 
-.sidebar .nav-link.active {
+.sidebar .nav-link.active,  .nav-clear.active{
   color: #007bff;
 }
 
 .sidebar .nav-link:hover .feather,
-.sidebar .nav-link.active .feather {
+.sidebar .nav-link.active .nav-clear .nav-link:hover .feather {
   color: inherit;
 }
 
@@ -226,15 +226,24 @@ font-size: 28px;
                 <li class="nav-item">
                   <div id="2"  data-name="Holiday" class="nav-link" >Holidays </div>  
                 </li>
+                <!---
                 <li class="nav-item">
                   <div id="3"  data-name="NASA" class="nav-link" >NASA  Daily Image </div>  
                 </li>
+              -->
                 <li class="nav-item">
-                  <div id="4"  data-name="Bitcoin" class="nav-link" >Bitcoin Prices</div>  
+                  <div id="4"  data-name="Music" class="nav-link" >Top 10 Songs</div>  
                 </li>
+
+                <li class="nav-item">
+                  <div id="5"  data-name="clear" class="nav-clear" >&nbsp; &nbsp; &nbsp;Clear All</div>  
+                </li>
+
+              
+
               </ul>
       
-  
+            <!---
               <ul class="nav flex-column mb-2">
                 <div class="nav-link active">
                   Add Custom Links 
@@ -258,8 +267,10 @@ font-size: 28px;
                   <div>  
                 </li>
               </ul>
-
+            -->
+ <!---
               <ul class="nav flex-column mb-2">
+               
                 <div class="nav-link active">
                   Your Custom Links: 
                 </div>
@@ -270,15 +281,16 @@ font-size: 28px;
                     <i>Links will appear here...</i>            
                   </div>
                 </li>
+              
                 <li class="nav-item">                
-                  <div class="nav-link";>
-                    <div id="clear"  data-name="clear" class="nav-clear" >Clear All</div>              
-                  </div>
+                  <li class="nav-item">
+                    <div id="4"  data-name="clear" class="clear-link" >clear</div>  
+                  </li>
                 </li>
 
-                
-
+    
               </ul>
+            -->
 
             </div> <!--stick div-->
 
@@ -298,6 +310,9 @@ font-size: 28px;
               <div id="NASA-results">
               </div>  
 
+
+                <div id="Music-results">
+               </div> 
 
 
 
@@ -334,17 +349,17 @@ $(document).on("click", ".nav-link", function(){
     event.preventDefault();
 
     var apiSelected = $(this).attr("data-name");
-    //alert(apiSelected);
+    //alert("button:" +apiSelected);
       
     if (apis.indexOf(apiSelected) === -1) {    
         apis.unshift(apiSelected);
     }
     //alert(apis);
-
-    
+   
+    if(apis != null) {
     localStorage.setItem("MyApi", JSON.stringify(apis));
-     
-    // $("#NYT-results").empty();
+  }   
+  
 
     location.reload();
 });
@@ -354,11 +369,10 @@ $(document).on("click", ".nav-link", function(){
 $(document).on("click", ".nav-clear", function(){
     event.preventDefault();
     var x = $(this).attr("data-name");
-     alert(x);
-    $("#NYT-results").empty();
-    $("Holiday-results").empty();
-    $("NASA-results").empty();
-    $(".smalltype").text ="";
+     //alert(x);
+
+     $("NYTimes-result #Holiday-result #NASA-results #Music-results ").empty(); 
+   
     
     localStorage.removeItem("MyApi");
     location.reload();
@@ -477,6 +491,63 @@ console.log(img);
 });
 
 }
+
+
+if (apis.indexOf("Music") >= 0) {  
+
+var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://30-000-radio-stations-and-music-charts.p.rapidapi.com/rapidapi?charts24h=1",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "30-000-radio-stations-and-music-charts.p.rapidapi.com",
+		"x-rapidapi-key": "001df8cadcmsha73da3732d7cba9p10579bjsn40db637f4980"
+	}
+}
+
+$.ajax(settings).done(function (resp) {
+	console.log(resp);
+
+var newRow = $("<h4>Top 10 Songs for today...</h4>");
+$("#Music-results").append(newRow);  
+
+
+for(var i=0; i < 10; i++){
+
+var z = i + 1;
+var  artist  = resp.results[i].artist_song;
+var song = resp.results[i].title_song;
+
+
+var songEncode =  song.replace(" ", "+");
+var url =  "http://www.youtube.com/results?search_query="+ songEncode +"&oq="+ songEncode +"";
+
+
+
+var newRow2 = $("<div class='smalltype'>"+ z +". " + song + " <a href='"+url+"' target ='_blank'>Link</a></div>");
+newRow.append(newRow2); 
+
+var newRow3 = $("<div class='smalltype smalltype-pad'>" + artist + "</div>");
+newRow2.append(newRow3); 
+}     
+
+
+
+});
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 </script>
