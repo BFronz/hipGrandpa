@@ -9,3 +9,23 @@ img {
 .hide {
     display: none;
   }
+
+  button {
+      background-color: white !important;
+      width: fit-content;
+      padding: 0px !important;
+      border-radius: 20px !important;
+  }
+
+  nav ul a {
+      color: rgb(142, 6, 6)!important;
+  }
+
+  body { 
+    background-image: url(http://ppcdn.500px.org/75319705/1991f76c0c6a91ae1d23eb94ac5c7a9f7e79c480/2048.jpg) ;
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    color: white;
+}
