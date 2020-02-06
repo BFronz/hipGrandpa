@@ -22,10 +22,15 @@ img {
   }
 
   body { 
-    background-image: url(http://ppcdn.500px.org/75319705/1991f76c0c6a91ae1d23eb94ac5c7a9f7e79c480/2048.jpg) ;
+    background-image: url(https://scontent-mia3-1.xx.fbcdn.net/v/t1.0-9/84496273_10221379588302075_1680719311078948864_n.jpg?_nc_cat=104&_nc_ohc=JUypgmeDMP4AX-VkWX1&_nc_ht=scontent-mia3-1.xx&oh=4488948f85da6859b6f8e2ce0f28c13b&oe=5E8E8560) ;
     background-position: center center;
     background-repeat:  no-repeat;
     background-attachment: fixed;
     background-size:  cover;
-    color: white;
+    color: lightyellow;
+}
+
+h1 {
+    text-align: left;
+    font-family: 'Francois One', sans-serif;
 }
