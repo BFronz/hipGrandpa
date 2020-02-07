@@ -1,5 +1,8 @@
 nav {
     height: 105px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
 }
 
 img {
@@ -27,11 +30,13 @@ ul#dropdown1.dropdown-content.active{
 }
 
   body { 
-    background-image: url(https://scontent-mia3-2.xx.fbcdn.net/v/t1.0-9/84518631_10221380210077619_4925844562389237760_n.jpg?_nc_cat=105&_nc_ohc=Sp53yHngVYcAX-p8s-k&_nc_ht=scontent-mia3-2.xx&oh=191d73b3d9ed5a1b7d72184c688b4a6a&oe=5ED27729);
+    background-image: url(https://scontent-mia3-1.xx.fbcdn.net/v/t1.0-9/85047759_10221389388267068_2842359384548311040_n.jpg?_nc_cat=104&_nc_ohc=zgs6KhpAzo0AX8ttef1&_nc_ht=scontent-mia3-1.xx&oh=a606455247307a5babbf2d116d4159a3&oe=5EB67A09);
     background-position: center center;
     background-repeat:  no-repeat;
     background-attachment: fixed;
     background-size:  cover;
+    padding-bottom: 100px;
+    margin-top: 170px;
 }
 
 h1 {
@@ -41,7 +46,10 @@ h1 {
 }
 
 .brand-logo {
-    font-family: 'Francois One', sans-serif;
+    /* font-family: 'Francois One', sans-serif; */
+    font-family: 'Rock Salt', cursive;
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 
 .wineBtn{
@@ -50,9 +58,16 @@ h1 {
     border-radius: 10px !important;
 }
 
+.container {
+    overflow: scroll;
+    margin-top: 120px;
+}
+
 /****** Bob *******/
 .smalltype {
     font-size: 18px;
+    line-height: 30px;
+    padding-bottom: 7px;
 }
 .smalltype-pad {
     padding-left: 10px;
@@ -79,8 +94,69 @@ footer {
     bottom: 0;
     width: 100%;
 }   
-   
+
+.footer-copyright{
+    background-color: #ee6e73 !important;
+    padding-left: 60px;
+}
+
  .marg-right {
     margin-right: 50px !important;
  }  
     
+ #wineform {
+    background-color: rgba(184, 218, 182, 0.4);
+     padding: 40px;
+ }
+
+#wine-input{
+    color: black !important;
+}
+
+label {
+    color: black !important;
+    font-weight: bold;
+}
+
+.responsive-table {
+    background-color: rgba(184, 218, 182, 0.4);
+    text-align: center;
+}
+
+th {
+    padding-left: 40px;
+}
+
+#text{
+    margin-bottom: 50px;
+}
+
+tbody{
+    width: 600px;
+}
+
+td {
+    display: inline-block;
+    padding-left: 20px;
+}
+
+iframe{
+    padding-left: 40px;
+}
+
+#nyt-results, #holiday-results, #music-results, #grandpa-jokes, #start-info{
+    font-family: 'Josefin Sans', sans-serif;
+    color: black; 
+    font-weight: bold; 
+    background-color: rgba(184, 218, 182, 0.4);
+    padding-top: 1px;
+    padding-left: 30px;
+ }
+
+ #start-info{
+     padding-bottom: 50px;
+ }
+
+ #first-button{
+     margin-left: 20px !important;
+ }

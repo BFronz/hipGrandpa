@@ -32,13 +32,13 @@ wineEl.style.display  = 'none';
 var  apiArr = JSON.parse(localStorage.getItem("MyApi"))
 if (apiArr !== null) {
     apis = apiArr;
-    document.getElementById("start-info").style.visibility = "hidden";
+    document.getElementById("start-info").style.display = "none";
 }
 
 
 
 // adding selected to array
-$(document).on("click", ".btn-flat", function(){
+$(document).on("click", ".b-click", function(){
     event.preventDefault();
 
     // this item will stops stacking of all apis on the page, remove it to change
@@ -198,7 +198,7 @@ if (apis.indexOf("jokes") >= 0) {
 var settings = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://jokeapi.p.rapidapi.com/category/miscellaneous?format=json",
+	"url": "https://jokeapi.p.rapidapi.com/category/programming?format=json",
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "jokeapi.p.rapidapi.com",
