@@ -9,6 +9,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
     <link href="https://fonts.googleapis.com/css?family=Francois+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Rock+Salt&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css"
@@ -24,32 +25,32 @@
   <body>
     <nav>
         <div class="nav-wrapper" width="500px" height="200px" style="padding: 15px;">
-           <img class = "circle" width=70px src="assets/images/hip-grandpa-dresses-better-than-most-people-half-his-age-1.jpg" alt="" ></img>
-          <a class="brand-logo" href="index.html">Hip Grandpa</a>
+           <img class = "circle" width=70px src="assets/images/HipGrandpaLogo.jpg" alt="" ></img>
+          <a class="brand-logo" href="index.html">Hip Grandpa</a> 
           <a href="#" data-activates="dropdown1" class="right button-collapse"><i class="material-icons right">menu</i></a>
           <ul class="right hide-on-med-and-down">
-            <button id="1" data-name="nytimes" class="btn-flat"><a href="#">New York Times Most Visited</a></button>
-            <button id="2" data-name="holiday" class="btn-flat"><a href="#">Holidays</a></button>
-            <button id="3" data-name="music" class="btn-flat"><a href="#">Music</a></button>
-            <button id="4" data-name="wine" class="btn-flat"><a href="#">Hip Wines</a></button>
-            <button id="5" data-name="jokes" class="btn-flat"><a href="#">Jokes</a></button>
-            <button id="6" data-name="howto" class="btn-flat"><a href="#">How To Videos</a></button>
+            <button id="first-button" data-name="nytimes" class="btn-flat b-click"><a href="#">New York Times Most Visited</a></button>
+            <button id="2" data-name="holiday" class="btn-flat b-click"><a href="#">Holidays</a></button>
+            <button id="3" data-name="music" class="btn-flat b-click"><a href="#">Music</a></button>
+            <button id="4" data-name="wine" class="btn-flat b-click"><a href="#">Hip Wines</a></button>
+            <button id="5" data-name="jokes" class="btn-flat b-click"><a href="#">Jokes</a></button>
+            <button id="6" data-name="howto" class="btn-flat b-click"><a href="#">How To Videos</a></button>
             <!-- <button id="7" data-name="urban" class="btn-flat"><a href="#">Urban Dictionary</a></button>   -->
             <button id="8" data-name="clear" class="btn-clear"><a href="#">Clear All</a></button>
           </ul>
           <!--hamburger menu-->
-          <ul class="dropdown-content" id="dropdown1">
-            <li id="1" data-name="nytimes"><a href="#">New York Times Most Visited</a></li>
+          <ul class="dropdown-content" id="dropdown1" style="width: 200px !important">
+            <li data-name="nytimes" class="b-click"><a href="#">New York Times Most Visited</a></li>
             <li class="divider"></li>
-            <li id="2" data-name="holiday"><a href="#">Holidays</a></li>
+            <li id="2" data-name="holiday" class="b-click"><a href="#">Holidays</a></li>
             <li class="divider"></li>
-            <li id="3" data-name="music"><a href="#">Music</a></li>
+            <li id="3" data-name="music" class="b-click"><a href="#">Music</a></li>
             <li class="divider"></li>
-            <li id="4" data-name="wine"><a href="#">Hip Wines</a></li>
+            <li id="4" data-name="wine" class="b-click"><a href="#">Hip Wines</a></li>
             <li class="divider"></li>
-            <li id="5" data-name="jokes"><a href="#">Jokes</a></li>
-            <li id="6" data-name="jokes"><a href="#">How To Videos</a></li>
-            <li id="8" data-name="jokes"><a href="#">Clear All</a></li>
+            <li id="5" data-name="jokes" class="b-click"><a href="#">Jokes</a></li>
+            <li id="6" data-name="howto" class="b-click"><a href="#">How To Videos</a></li>
+            <li id="8" data-name="clear" class="btn-clear"><a href="#">Clear All</a></li>
           </ul>
         </div>
       </nav>
@@ -123,15 +124,12 @@
 </div><!--end container-->   
 
 <footer class="page-footer">
-  <div class="footer-copyright">
-    <div class="container">
+   <span class="footer-copyright"> 
     © 2020 Copyright HipGrandpa
-    <a class="grey-text text-lighten-4 right  marg-right" href="mailto:bfronz1960@gmail.com?Subject=How%20Can%20We%20Help%20You" target="_top">Contact HipGrandpa</a>
+    <a class="grey-text text-lighten-4 right  marg-right" href="mailto:bfronz1960@gmail.com, elenabaurkot@gmail.com, adriansaporta@gmail.com, jarud55@gmail.com?Subject=How%20Can%20We%20Help%20You" target="_top">Contact HipGrandpa</a>
      <span class="grey-text text-lighten-4 right"> &nbsp; | &nbsp; </span>  
     <a class="grey-text text-lighten-4 right" href="about.html">About</a>
-
-    </div>
-  </div>
+  </span> 
 </footer>
     
 
