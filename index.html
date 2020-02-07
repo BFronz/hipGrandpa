@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html lang="en">
 <html>
   <head>
     <title>Hip Grandpa</title>
@@ -15,40 +16,128 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+  
+
+   
   </head>
 
   <body>
     <nav>
         <div class="nav-wrapper" width="500px" height="200px" style="padding: 15px;">
            <img class = "circle" width=70px src="assets/images/hip-grandpa-dresses-better-than-most-people-half-his-age-1.jpg" alt="" ></img>
-          <a class="brand-logo" >Hip Grandpa</a>
-          <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <a class="brand-logo" href="index.html">Hip Grandpa</a>
+          <a href="#" data-activates="dropdown1" class="right button-collapse"><i class="material-icons right">menu</i></a>
+          <ul class="right hide-on-med-and-down">
             <button id="1" data-name="nytimes" class="btn-flat"><a href="#">New York Times Most Visited</a></button>
             <button id="2" data-name="holiday" class="btn-flat"><a href="#">Holidays</a></button>
             <button id="3" data-name="music" class="btn-flat"><a href="#">Music</a></button>
             <button id="4" data-name="wine" class="btn-flat"><a href="#">Hip Wines</a></button>
             <button id="5" data-name="jokes" class="btn-flat"><a href="#">Jokes</a></button>
+            <button id="6" data-name="howto" class="btn-flat"><a href="#">How To Videos</a></button>
+            <!-- <button id="7" data-name="urban" class="btn-flat"><a href="#">Urban Dictionary</a></button>   -->
+            <button id="8" data-name="clear" class="btn-clear"><a href="#">Clear All</a></button>
+          </ul>
+          <!--hamburger menu-->
+          <ul class="dropdown-content" id="dropdown1">
+            <li id="1" data-name="nytimes"><a href="#">New York Times Most Visited</a></li>
+            <li class="divider"></li>
+            <li id="2" data-name="holiday"><a href="#">Holidays</a></li>
+            <li class="divider"></li>
+            <li id="3" data-name="music"><a href="#">Music</a></li>
+            <li class="divider"></li>
+            <li id="4" data-name="wine"><a href="#">Hip Wines</a></li>
+            <li class="divider"></li>
+            <li id="5" data-name="jokes"><a href="#">Jokes</a></li>
+            <li id="6" data-name="jokes"><a href="#">How To Videos</a></li>
+            <li id="8" data-name="jokes"><a href="#">Clear All</a></li>
           </ul>
         </div>
       </nav>
+
+
+
+
 <div class="container">
-  <div class = "row">
-    <h1>Welcome to HipGrandpa!</h1>
-    <div style ="background-color: yellow;">
+  <div id = "start-info">
+    <h3>Welcome to HipGrandpa!</h3>
+    <h5>Where you too can learn todays culture and become as hip as a Millennial! <h5>
+    <h5>Click any button above to start.</h5>  
   </div>
+
   <!--divs for where APIs will appear-->
-  <div id="nyt-results"></div>  
-  <div id="holiday-results"></div>  
-  <div id="music-results"><div> 
-  <div id="wine-results"></div>
+  <div id="nyt-results"></div> 
+  <div id="holiday-results"></div>
+  <div id="music-results"></div> 
   <div id="grandpa-jokes"></div>
+
+  <div id="wine-results">
+    <form id="wineform">
+      <div class="row">
+       <div class="input-field col s6">
+        <input placeholder="i.e. Merlot" id="wine_input" type="text" >
+        <label for="wine_input">Search for a Wine:</label>
+       </div>
+       </div>
+       <button class="wineBtn">Submit</button>
+    </form>
+      <table class="responsive-table">
+        <thead>
+          <tr>
+              <th colspan="4" class="smalltype">Recommended Wines (click on label to view)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a id="img1"  href="" target="_blank"><img src="" id="wine1" ></a></td> 
+            <td><a id="img2"  href="" target="_blank"><img src="" id="wine2" ></a></td> 
+            <td><a id="img3"  href="" target="_blank"><img src="" id="wine3" ></a></td> 
+          </tr>  
+        </tbody>
+      </table>
+   </div>
+
+  <div id="howto-results">
+    <table class="responsive-table">
+      <thead>
+        <tr>
+            <th colspan="4" class="smalltype">How to Videos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><iframe id="frame1" width="260" height="150" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+          <td><iframe id="frame2" width="260" height="150" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+          <td><iframe id="frame3" width="260" height="150" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+          <td><iframe id="frame4" width="260" height="150" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
+        </tr>  
+      </tbody>
+    </table>
+  
+    </div>
+
+
+
+
 
   </div><!--end row-->
 </div><!--end container-->   
 
-<script src="assets/js/script.js"></script>
+<footer class="page-footer">
+  <div class="footer-copyright">
+    <div class="container">
+    © 2020 Copyright HipGrandpa
+    <a class="grey-text text-lighten-4 right  marg-right" href="mailto:bfronz1960@gmail.com?Subject=How%20Can%20We%20Help%20You" target="_top">Contact HipGrandpa</a>
+     <span class="grey-text text-lighten-4 right"> &nbsp; | &nbsp; </span>  
+    <a class="grey-text text-lighten-4 right" href="about.html">About</a>
 
+    </div>
+  </div>
+</footer>
+    
+
+
+
+
+<script src="./assets/js/script.js"></script>
 </body>
 </html>
-
-

@@ -1,5 +1,5 @@
 nav {
-    height: 110px;
+    height: 105px;
 }
 
 img {
@@ -14,23 +14,73 @@ img {
       background-color: white !important;
       width: fit-content;
       padding: 0px !important;
-      border-radius: 20px !important;
+      border-radius: 50px !important;
   }
 
   nav ul a {
       color: rgb(142, 6, 6)!important;
-  }
+      text-align: center
+  };
+
+ul#dropdown1.dropdown-content.active{
+    text-align: center;
+}
 
   body { 
-    background-image: url(https://scontent-mia3-1.xx.fbcdn.net/v/t1.0-9/84496273_10221379588302075_1680719311078948864_n.jpg?_nc_cat=104&_nc_ohc=JUypgmeDMP4AX-VkWX1&_nc_ht=scontent-mia3-1.xx&oh=4488948f85da6859b6f8e2ce0f28c13b&oe=5E8E8560) ;
+    background-image: url(https://scontent-mia3-2.xx.fbcdn.net/v/t1.0-9/84518631_10221380210077619_4925844562389237760_n.jpg?_nc_cat=105&_nc_ohc=Sp53yHngVYcAX-p8s-k&_nc_ht=scontent-mia3-2.xx&oh=191d73b3d9ed5a1b7d72184c688b4a6a&oe=5ED27729);
     background-position: center center;
     background-repeat:  no-repeat;
     background-attachment: fixed;
     background-size:  cover;
-    color: lightyellow;
 }
 
 h1 {
     text-align: left;
     font-family: 'Francois One', sans-serif;
+    color: #ee6e73;
 }
+
+.brand-logo {
+    font-family: 'Francois One', sans-serif;
+}
+
+.wineBtn{
+    color: black;
+    padding: 10px !important;
+    border-radius: 10px !important;
+}
+
+/****** Bob *******/
+.smalltype {
+    font-size: 18px;
+}
+.smalltype-pad {
+    padding-left: 10px;
+}
+
+a:link {color:  white;}
+a:visited {color: white;}
+a:hover {color:  lightskyblue}
+a:active {color: white;}
+
+.am:link {color:  blue;}
+.am:visited {color: blue}
+.am:hover {color:  lightskyblue}
+.am:active {color: white;}
+
+label{
+    font-size: 18px !important;;
+    color: wheat !important;;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}   
+   
+ .marg-right {
+    margin-right: 50px !important;
+ }  
+    
