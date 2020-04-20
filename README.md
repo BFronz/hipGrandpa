@@ -39,6 +39,10 @@ The site currently has 5 API and 1 imbedded video buttons which will bring in Mu
 Responsive design, intuitive, fast loading easy to navigate.
 
 
+<img src="assets/images/project-hipgrandpa.png" alt="hipGrandpa">
+
+
+
 ## Acknowledgments
 * Rutgers Bootcamp Team
 * Materializecss.com
